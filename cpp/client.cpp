@@ -34,7 +34,7 @@ using namespace tutorial;
 using namespace shared;
 
 int main() {
-  std::shared_ptr<TTransport> socket(new TSocket("localhost", 9090));
+  std::shared_ptr<TTransport> socket(new TSocket("127.0.0.1", 9090));
   std::shared_ptr<TTransport> transport(new TBufferedTransport(socket));
   std::shared_ptr<TProtocol> protocol(new TBinaryProtocol(transport));
   CalculatorClient client(protocol);
